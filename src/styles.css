@@ -3,8 +3,9 @@
 *{
   margin: 0;
   padding: 0;
-  border: 1px dashed rgb(255, 0, 0);
+  /* border: 1px dashed rgb(255, 0, 0); */
   box-sizing: border-box;
+  font-family: "Roboto", serif;
 }
 
 :root {
@@ -19,7 +20,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 98vh;
 }
 
 header {
@@ -34,29 +35,86 @@ header {
   width: auto;
 }
 
-aside {
+.main {
+  display: flex;
   height: 87%;
+}
+
+aside {
+  height: 100%;
   background-color: var(--accent-lightgrey);
   width: 18%;
-  font-family: "Roboto", serif;
   padding: 20px;
 }
 
-aside h1, h2, p {
+aside h1, aside h2, aside p {
   margin: 10px 0;
   align-content: center;
   padding: 10px;
   border-radius: 15px;
 }
 
-aside h2, p {
+aside h2, aside p {
   cursor: pointer;
 }
 
-aside h2:hover, p:hover {
+aside h2:hover, aside p:hover {
   /* color: var(--accent-blue); */
   background-color: var(--accent-grey);
 }
+
+/* Content Section */
+
+.content {
+  width: 82%;
+  height: 100%;
+  padding: 30px 300px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.contentButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: var(--primary-white);
+  margin-bottom: 10px;
+}
+
+.contentButton:hover {
+  background-color: var(--accent-lightgrey);
+}
+
+.contentButtonLeftDiv {
+  display: flex;
+  justify-content: left;
+  gap: 5%;
+  width: 80%;
+}
+
+.contentButtonLeftDiv i {
+  align-content: center;
+}
+
+.contentButtonRightDiv {
+  display: flex;
+  justify-content: right;
+  gap: 10%;
+  width: 20%;
+}
+
+.contentButtonLeftDiv i:hover, .contentButtonLeftDiv p:hover, .contentButtonRightDiv p:hover, .contentButtonRightDiv i:hover {
+  color: var(--accent-blue);
+  cursor: pointer;
+}
+
+
 
 
 
