@@ -23,9 +23,23 @@ body {
 header {
   background-color: var(--primary-black);
   padding: 10px;
+  height: 10%;
 }
 
 .logo {
   height: 50px;
   width: auto;
+}
+
+aside {
+  height: 85%;
+  background-color: var(--accent-grey);
+  width: 17%;
+}
+
+footer {
+  height: 5%;
+  color: var(--primary-white);
+  background-color: var(--primary-black);
+  
 }
