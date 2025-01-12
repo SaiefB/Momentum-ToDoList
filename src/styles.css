@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Primary Colors */
+  --primary-black: #292929;
+  --primary-white: #fff;
+
+  /* Accent Colors */
+  --accent-blue: #0197F6;
+  --accent-grey: #9A9A9A;
+  --accent-lightgrey: #D6D6D6;
+}
+
 body {
   color: blue;
 }
