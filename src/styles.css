@@ -35,12 +35,30 @@ header {
 }
 
 aside {
-  font-family: ;
   height: 87%;
-  background-color: var(--accent-grey);
+  background-color: var(--accent-lightgrey);
   width: 18%;
   font-family: "Roboto", serif;
+  padding: 20px;
 }
+
+aside h1, h2, p {
+  margin: 10px 0;
+  align-content: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+aside h2, p {
+  cursor: pointer;
+}
+
+aside h2:hover, p:hover {
+  /* color: var(--accent-blue); */
+  background-color: var(--accent-grey);
+}
+
+
 
 footer {
   display: flex;
