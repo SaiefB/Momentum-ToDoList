@@ -19,3 +19,13 @@
 body {
   height: 100vh;
 }
+
+header {
+  background-color: var(--primary-black);
+  padding: 10px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
