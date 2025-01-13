@@ -1,6 +1,7 @@
 import "./styles.css";
 
-import {generateInbox} from "./inbox"
+import {generateInbox} from "./inbox";
 
-generateInbox()
-alert("js working")
+
+generateInbox();
+
