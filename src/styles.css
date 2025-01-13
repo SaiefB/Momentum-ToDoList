@@ -114,6 +114,28 @@ aside h2:hover, aside p:hover {
   cursor: pointer;
 }
 
+.contentAddButton {
+  display: flex;
+  border: none;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 15%;
+  justify-content: left;
+}
+
+.contentAddButton i{
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  width: 5%;
+  border: 2px solid var(--primary-black);
+}
+
+.contentAddButton i:hover {
+  background-color: var(--accent-lightgrey);
+  color: var(--accent-blue);
+  cursor: pointer;
+}
 
 
 
