@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/daf27280b1.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="overlay"></div>
     <header>
         <img class="logo" src="./img/momentum-high-resolution-logo-transparent.png" alt="Momentum Logo">
     </header>
@@ -51,6 +52,32 @@
                     <i class="fa-solid fa-plus"></i>
             </button> -->
 
+        </section>
+
+        <section class="formSection">
+            <p class="modalClose">X</p>
+            <form class="taskForm" action="">
+    
+                <div class="taskInputDiv">
+                    <label for="task">Add a task: </label>
+                    <input class="task" type="text" id="task" name="task">
+                </div>
+    
+                <div class="descriptionInputDiv">
+                    <label for="description">Description: </label>
+                    <input class="description" type="text" id="description" name="description">
+                </div>
+    
+                <div class="dateInputDiv">
+                    <label for="date">Due: </label>
+                    <input class="date" type="date" id="date" name="date">
+                </div>
+                
+                <div class="submitBtnSection">
+                    <button class="cancelBtn">Cancel</button>
+                    <input class="submit" type="submit" value="Add Task">
+                </div>
+            </form>
         </section>
     </div>
 
