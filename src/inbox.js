@@ -24,7 +24,7 @@ function generateInbox() {
     contentButtonLeftDiv.appendChild(inboxButtonCircle);
 
     const inboxButtonTask = document.createElement("p");
-    inboxButtonTask.textContent = "Complete Work";
+    inboxButtonTask.textContent = "An Inbox task";
     contentButtonLeftDiv.appendChild(inboxButtonTask);
 
     const contentButtonRightDiv = document.createElement("div");
