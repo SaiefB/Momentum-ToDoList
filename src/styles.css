@@ -3,7 +3,7 @@
 *{
   margin: 0;
   padding: 0;
-  /* border: 1px dashed rgb(255, 0, 0); */
+  border: 1px dashed rgb(255, 0, 0);
   box-sizing: border-box;
   font-family: "Roboto", serif;
 }
@@ -45,20 +45,35 @@ aside {
   background-color: var(--accent-lightgrey);
   width: 18%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-aside h1, aside h2, aside p {
+aside button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: var(--accent-lightgrey);
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+.projectBtn {
+  font-size: 1rem;
+}
+
+aside h1, aside button, aside p {
   margin: 10px 0;
   align-content: center;
   padding: 10px;
   border-radius: 15px;
 }
 
-aside h2, aside p {
+aside button, aside p {
   cursor: pointer;
 }
 
-aside h2:hover, aside p:hover {
+aside button:hover, aside p:hover {
   /* color: var(--accent-blue); */
   background-color: var(--accent-grey);
 }
