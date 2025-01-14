@@ -9,8 +9,7 @@ function generateInbox() {
     inboxTitle.textContent = "Inbox";
     contentDiv.appendChild(inboxTitle);
 
-
-    // Button
+/*     // Button
     const inboxButton = document.createElement("button");
     inboxButton.className = "contentButton";
     contentDiv.appendChild(inboxButton);
@@ -37,7 +36,7 @@ function generateInbox() {
 
     const inboxButtonBin = document.createElement("i");
     inboxButtonBin.className = "fa-solid fa-trash"
-    contentButtonRightDiv.appendChild(inboxButtonBin);
+    contentButtonRightDiv.appendChild(inboxButtonBin); */
 
     //Add  Button
     const addButton = document.createElement("button");
@@ -47,9 +46,6 @@ function generateInbox() {
     const addButtonSymbol = document.createElement("i");
     addButtonSymbol.className = "fa-solid fa-plus";
     addButton.appendChild(addButtonSymbol);
-
-
-
 }
 
 export {
