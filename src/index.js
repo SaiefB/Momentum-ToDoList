@@ -15,4 +15,19 @@ todayBtn.addEventListener("click", generateToday);
 weekBtn.addEventListener("click", generateWeek);
 
 
+const addBtn = document.querySelector(".contentAddButton")
+const closeBtn = document.getElementById("modalClose");
+const modal = document.getElementById("formSection");
+const overlay = document.getElementById("overlay");
 
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+}
+
+addBtn.onclick = function() {
+    const modal = document.getElementById("formSection");
+    const overlay = document.getElementById("overlay");
+    modal.style.display = "block";
+    overlay.style.display = "block";
+}
