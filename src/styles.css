@@ -3,7 +3,7 @@
 *{
   margin: 0;
   padding: 0;
-  border: 1px dashed rgb(255, 0, 0);
+  /* border: 1px dashed rgb(255, 0, 0); */
   box-sizing: border-box;
   font-family: "Roboto", serif;
 }
@@ -159,7 +159,7 @@ aside button:hover, aside p:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200%;
+  height: 100%;
   z-index: 10;
   background-color: rgba(0,0,0,0.75); /*dim the background*/
   display: block;
@@ -170,12 +170,12 @@ aside button:hover, aside p:hover {
   z-index: 11;
   display: block;
   position: fixed;
-  background-color: var(--accent-lightgrey);
-  padding: 10px;
+  background-color: var(--primary-black);
+  padding: 15px 20px;
   border-radius: 15px;
   font-size: 1.5rem;
-  width: 25%;
-  height: 25%;
+  width: 35%;
+  height: 50%;
   left: 50%;
   top: 50%;
   margin-top: -12.5%;
@@ -183,8 +183,11 @@ aside button:hover, aside p:hover {
 }
 
 .modalClose {
+  color: var(--accent-lightgrey);
   display: flex;
   justify-content: right;
+  font-weight: 700;
+  margin: 0 5px 10px 0;
 }
 
 .modalClose:hover {
@@ -193,16 +196,61 @@ aside button:hover, aside p:hover {
 }
 
 form div {
-  margin-bottom: 10px;
+  margin: 15px 0;
   display: flex;
-  
 }
 
+input {
+  cursor: pointer;
+}
 
-
-.taskInputDiv input {
-  width: 100%;
+.taskInputDiv input, .descriptionInputDiv textarea{
   font-size: 1.5rem;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.descriptionInputDiv textarea {
+  height: 190px;
+}
+
+.dateInputDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateInputDiv label {
+  color: var(--accent-lightgrey);
+  align-content: center;
+}
+
+.dateInputDiv input {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.submitBtnSection {
+  display: flex;
+  justify-content: center;
+  gap: 30%;
+}
+
+.cancelBtn, .submit {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: var(--accent-lightgrey);
+  cursor: pointer;
+}
+
+.cancelBtn:hover {
+  background-color: var(--accent-grey);
+}
+
+.submit:hover {
+  background-color: var(--accent-blue);
 }
 
 
