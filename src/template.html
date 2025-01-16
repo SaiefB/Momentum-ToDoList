@@ -22,9 +22,11 @@
             <button class="projectBtn"><i class="fa-regular fa-square-plus"></i>Add Project</button>
         </aside>
 
-        <section class="content" id="contentDiv">
+        
 
-            <!-- <h1>Inbox</h1>
+        <section class="inboxSection content" id="contentDiv">
+
+            <h1>Inbox</h1>
 
             <button class="contentButton">
                 <div class="contentButtonLeftDiv">
@@ -50,9 +52,79 @@
 
             <button class="contentAddButton">
                     <i class="fa-solid fa-plus"></i>
-            </button> -->
+            </button>
 
         </section>
+
+
+
+        <section class="todaySection content" id="contentDiv">
+
+            <h1>Today</h1>
+
+            <button class="contentButton">
+                <div class="contentButtonLeftDiv">
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Complete work</p>
+                </div>
+                <div class="contentButtonRightDiv">
+                    <p>00/00/00</p>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </button>
+            
+            <button class="contentButton">
+                <div class="contentButtonLeftDiv">
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Eat Lunch</p>
+                </div>
+                <div class="contentButtonRightDiv">
+                    <p>00/00/00</p>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </button>
+
+            <button class="contentAddButton">
+                    <i class="fa-solid fa-plus"></i>
+            </button>
+
+        </section>
+
+
+
+        <section class="weekSection content" id="contentDiv">
+
+            <h1>This Week</h1>
+
+            <button class="contentButton">
+                <div class="contentButtonLeftDiv">
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Complete work</p>
+                </div>
+                <div class="contentButtonRightDiv">
+                    <p>00/00/00</p>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </button>
+            
+            <button class="contentButton">
+                <div class="contentButtonLeftDiv">
+                    <i class="fa-regular fa-circle"></i>
+                    <p>Eat Lunch</p>
+                </div>
+                <div class="contentButtonRightDiv">
+                    <p>00/00/00</p>
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </button>
+
+            <button class="contentAddButton">
+                    <i class="fa-solid fa-plus"></i>
+            </button>
+
+        </section>
+
+
 
         <section class="formSection" id="formSection">
             <p class="modalClose" id="modalClose">X</p>
@@ -72,6 +144,16 @@
                 <div class="dateInputDiv">
                     <label for="date">Due date: </label>
                     <input class="date" type="date" id="date" name="date">
+                </div>
+
+                <div class="dateInputDiv">
+                    <label for="priority">Priority: </label>
+                    <select name="priority" id="priority">
+                        <option value="p1">P1</option>
+                        <option value="p2">P2</option>
+                        <option value="p3">P3</option>
+                        <option value="p4">P4</option>
+                    </select>
                 </div>
                 
                 <div class="submitBtnSection">
