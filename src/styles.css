@@ -187,11 +187,11 @@ aside button:hover, aside p:hover {
   border-radius: 15px;
   font-size: 1.5rem;
   width: 35%;
-  height: 50%;
+  height: 60%;
   left: 50%;
   top: 50%;
-  margin-top: -12.5%;
-  margin-left: -12.5%;
+  margin-top: -14.5%;
+  margin-left: -8.5%;
 }
 
 .modalClose {
@@ -241,6 +241,26 @@ input {
   font-size: 1.5rem;
   padding: 10px;
   border-radius: 15px;
+}
+
+.priorityInputDiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 35%;
+}
+
+.priorityInputDiv label {
+  color: var(--accent-lightgrey);
+  align-content: center
+}
+
+.priorityInputDiv select {
+  font-size: 1.5rem;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--primary-white);
 }
 
 .submitBtnSection {
