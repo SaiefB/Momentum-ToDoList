@@ -1,15 +1,3 @@
-/* closeBtn.onclick = function() {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-}
-
-addBtn.onclick = function() {
-    const modal = document.getElementById("formSection");
-    const overlay = document.getElementById("overlay");
-    modal.style.display = "block";
-    overlay.style.display = "block";
-} */
-
 const myTasks = [];
 
 class Task {
@@ -28,7 +16,7 @@ function validateForm() {
     const priorityInput = document.querySelector(".priority")
 
     // If any field is empty, alert the user and return false to prevent submission.
-    if (taskInput === "" || descriptionInput === "" || dateInput === "" || priorityInput === "") {
+    if (taskInput.value === "" || descriptionInput.value === "" || dateInput.value === "" || priorityInput.value === "") {
         alert("Please complete all required fields");
         return false; // Form is not valid.
     } else {
@@ -36,14 +24,13 @@ function validateForm() {
     }
 }
 
-const submitBtn = querySelector(".submit")
+const submitBtn = document.querySelector(".submit")
 
 /* -------------------- Button Functionality --------------------*/
 submitBtn.onclick = function(event) {
-    
-
     event.preventDefault(); // Prevents the form from submitting and refreshing the page.
-    
+    console.log("prevent default success")
+
     if (validateForm()) {
         console.log("success"); // Calls your function to add a book if the form is valid.
     }
