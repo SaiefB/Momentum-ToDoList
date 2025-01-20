@@ -5,6 +5,8 @@ import { validateForm } from "./logic";
 // DOM.js
 
 /* -------------------- Button Functionality --------------------*/
+
+// submit button
 function submitButton() {
     const submitBtn = document.querySelector(".submit")
 
