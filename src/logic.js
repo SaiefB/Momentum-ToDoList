@@ -1,5 +1,7 @@
+//Logic.js
 const myTasks = [];
 
+// Class Constructor
 class Task {
     constructor(taskTitle, description, dueDate, priority) {
         this.taskTitle = taskTitle;
@@ -7,31 +9,23 @@ class Task {
         this.dueDate = dueDate;
         this.priority = priority;
     }
-};
+}
 
-function validateForm() {
-    const taskInput = document.querySelector("task");
-    const descriptionInput = document.querySelector(".description");
-    const dateInput = document.querySelector(".date");
-    const priorityInput = document.querySelector(".priority")
-
-    // If any field is empty, alert the user and return false to prevent submission.
-    if (taskInput.value === "" || descriptionInput.value === "" || dateInput.value === "" || priorityInput.value === "") {
+// Validates the form - checks if all fields are entered
+function validateForm(task, description, date, priority) {
+    if (task === "" || description === "" || date === "" || priority === "") {
         alert("Please complete all required fields");
-        return false; // Form is not valid.
-    } else {
-        return true; // Form is valid.
+        return false;
     }
+    return true;
 }
 
-const submitBtn = document.querySelector(".submit")
-
-/* -------------------- Button Functionality --------------------*/
-submitBtn.onclick = function(event) {
-    event.preventDefault(); // Prevents the form from submitting and refreshing the page.
-    console.log("prevent default success")
-
-    if (validateForm()) {
-        console.log("success"); // Calls your function to add a book if the form is valid.
-    }
+// Function to Add Task to Inbox
+function addTask(taskTitle, description, dueDate, priority) {
+    const newTask = new Task(taskTitle, description, dueDate, priority);
+    myTasks.push(newTask);
+    console.log("New Task Added:", newTask);
+    console.log("Task Array:", myTasks);
 }
+
+export { validateForm, addTask };
