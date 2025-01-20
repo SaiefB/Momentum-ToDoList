@@ -1,3 +1,5 @@
+//Logic.js
+
 const myTasks = [];
 
 class Task {
@@ -10,10 +12,10 @@ class Task {
 };
 
 function validateForm() {
-    const taskInput = document.querySelector("task");
+    const taskInput = document.querySelector(".task");
     const descriptionInput = document.querySelector(".description");
     const dateInput = document.querySelector(".date");
-    const priorityInput = document.querySelector(".priority")
+    const priorityInput = document.querySelector(".priority");
 
     // If any field is empty, alert the user and return false to prevent submission.
     if (taskInput.value === "" || descriptionInput.value === "" || dateInput.value === "" || priorityInput.value === "") {
@@ -24,14 +26,6 @@ function validateForm() {
     }
 }
 
-const submitBtn = document.querySelector(".submit")
+//Export
 
-/* -------------------- Button Functionality --------------------*/
-submitBtn.onclick = function(event) {
-    event.preventDefault(); // Prevents the form from submitting and refreshing the page.
-    console.log("prevent default success")
-
-    if (validateForm()) {
-        console.log("success"); // Calls your function to add a book if the form is valid.
-    }
-}
+export {validateForm};
