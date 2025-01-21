@@ -1,6 +1,8 @@
 //Logic.js
 const myTasks = [];
 
+const taskEntries = document.querySelector(".taskItemContainer");
+
 // Class Constructor
 class Task {
     constructor(taskTitle, description, dueDate, priority) {
@@ -26,6 +28,31 @@ function addTask(taskTitle, description, dueDate, priority) {
     myTasks.push(newTask);
     console.log("New Task Added:", newTask);
     console.log("Task Array:", myTasks);
+    displayTasks();
 }
 
-export { validateForm, addTask };
+function displayTasks() {
+    taskEntries.innerHTML = ' '; // clears the current task entry to avoid duplication
+
+    myTasks.forEach((task, index) => {
+        const taskEntry = `
+        <button class="contentButton">
+            <div class="contentButtonLeftDiv">
+                <i class="fa-regular fa-circle"></i>
+                <p>${task.taskTitle}</p>
+                <p>${task.description}</p>
+            </div>
+            <div class="contentButtonRightDiv">
+                <p>${task.dueDate}</p>
+                <i class="fa-solid fa-trash"></i>
+            </div>
+        </button>
+        `;
+
+        taskEntries.innerHTML += taskEntry;
+    });
+
+
+}   
+
+export { validateForm, addTask};

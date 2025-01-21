@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm } from "./logic";
+import { addTask, validateForm, myTasks } from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -13,6 +13,7 @@ const modal = document.querySelector(".formSection")
 const overlay = document.querySelector(".overlay")
 const closeBtn = document.querySelector(".modalClose");
 const addBtn = document.querySelector(".contentAddButton");
+
 
 // Submit button functionality
 function submitButton() {
@@ -56,9 +57,7 @@ function closeButton() {
     }
 }
 
-/* function displayTasks() {
 
-}    */
 
 export { submitButton, closeButton, addTaskButton };
 
