@@ -36,7 +36,7 @@ function displayTasks() {
 
     myTasks.forEach((task, index) => {
         const taskEntry = `
-        <button class="contentButton">
+        <button class="contentButton" data-index="${index}">
             <div class="contentButtonLeftDiv">
                 <i class="fa-regular fa-circle"></i>
                 <p>${task.taskTitle}</p>
