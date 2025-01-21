@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm, myTasks } from "./logic";
+import { addTask, validateForm, myTasks} from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -57,7 +57,5 @@ function closeButton() {
     }
 }
 
-
-
-export { submitButton, closeButton, addTaskButton };
+export { submitButton, closeButton, addTaskButton};
 

@@ -31,6 +31,13 @@ function addTask(taskTitle, description, dueDate, priority) {
     displayTasks();
 }
 
+function taskDelete() {
+    const deleteItem = document.querySelectorAll(".delete");
+    deleteItem.forEach(button => {
+        button.addEventListener('click', deleteTask); // Assigns the deleteItem function to each button.
+    });
+}
+
 function displayTasks() {
     taskEntries.innerHTML = ' '; // clears the current task entry to avoid duplication
 
@@ -41,18 +48,31 @@ function displayTasks() {
                 <i class="fa-regular fa-circle"></i>
                 <p>${task.taskTitle}</p>
                 <p>${task.description}</p>
+                <p>${task.priority}</p>
             </div>
             <div class="contentButtonRightDiv">
                 <p>${task.dueDate}</p>
-                <i class="fa-solid fa-trash"></i>
+                <p class="delete"><i class="fa-solid fa-trash" data-index="${index}"></i></p>
             </div>
         </button>
         `;
 
         taskEntries.innerHTML += taskEntry;
     });
-
-
 }   
 
-export { validateForm, addTask};
+
+
+function deleteTask(event) {
+    const taskIndex = parseInt(event.target.getAttribute('data-index'), 10); // Converts data-index to a number and then stores it.
+
+    // Removes the task at that index from the 'myTasks' array.
+    myTasks.splice(taskIndex, 1);
+
+    //re-displays the tasks to reflect the deletion
+    displayTasks();
+}
+
+
+
+export { validateForm, addTask, taskDelete};
