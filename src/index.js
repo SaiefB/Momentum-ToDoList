@@ -1,6 +1,8 @@
 //index.js
 
 import "./styles.css";
-import { submitButton } from "./DOM";
+import { submitButton, closeButton, addTaskButton} from "./DOM";
 
 submitButton();
+closeButton();
+addTaskButton();
