@@ -1,7 +1,7 @@
 //index.js
 
 import "./styles.css";
-import { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction} from "./DOM";
+import { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction} from "./DOM";
 
 document.addEventListener("DOMContentLoaded", () => {
     submitButton();
@@ -9,4 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cancelButton();
     addTaskButton();
     deleteTaskFunction();
+    todaySectionFunction();
+    inboxSectionFunction();
+    weekSectionFunction();
 });

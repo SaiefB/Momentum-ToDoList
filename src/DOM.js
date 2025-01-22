@@ -29,9 +29,9 @@ function submitButton() {
             addTask(task, description, date, priority);
             clearForm();
             displayTasks();
-        }
+        };
     };
-}
+};
 
 // Clear form fields
 function clearForm() {
@@ -92,18 +92,44 @@ function closeButton() {
 }
 
 function cancelButton() {
-    modalCancel.onclick =function() {
+    modalCancel.onclick = function() {
         modal.style.display = "none";
         overlay.style.display = "none"; 
     }
 }
 
-/* --------- Today Section ------------ */
+/* --------- Inbox/Today/This Week Section ------------ */
+const inboxSection = document.querySelector(".inboxSection");
+const inboxSectionBtn = document.querySelector(".inboxBtn");
 const todaySection = document.querySelector(".todaySection");
-const todaySectionBtn = document.querySelector(".todayBtn")
+const todaySectionBtn = document.querySelector(".todayBtn");
+const weekSection = document.querySelector(".weekSection");
+const weekSectionBtn = document.querySelector(".weekBtn");
 
-function todaySectionFunction() {
-
+function inboxSectionFunction() {
+    inboxSectionBtn.onclick = function() {
+        inboxSection.style.display = "block";
+        todaySection.style.display = "none";
+        weekSection.style.display = "none"
+    }
 }
 
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction };
+function todaySectionFunction() {
+    todaySectionBtn.onclick = function() {
+        inboxSection.style.display = "none";
+        todaySection.style.display = "block";
+        weekSection.style.display = "none"
+    }
+}
+
+function weekSectionFunction() {
+    weekSectionBtn.onclick = function() {
+        inboxSection.style.display = "none";
+        todaySection.style.display = "none";
+        weekSection.style.display = "block"
+    }
+}
+
+
+
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction};
