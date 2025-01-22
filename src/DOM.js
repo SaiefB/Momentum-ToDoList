@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm, myTasks} from "./logic";
+import { addTask, validateForm, myTasks } from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -9,12 +9,11 @@ const descriptionInput = document.querySelector(".description");
 const dateInput = document.querySelector(".date");
 const priorityInput = document.querySelector(".priority");
 const submitBtn = document.querySelector(".submit");
-const modal = document.querySelector(".formSection")
-const overlay = document.querySelector(".overlay")
+const modal = document.querySelector(".formSection");
+const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelector(".modalClose");
 const addBtn = document.querySelector(".contentAddButton");
 const taskEntries = document.querySelector(".taskItemContainer");
-
 
 // Submit button functionality
 function submitButton() {
@@ -41,8 +40,9 @@ function clearForm() {
     priorityInput.value = "";
 }
 
+// Display tasks
 function displayTasks() {
-    taskEntries.innerHTML = ' '; // clears the current task entry to avoid duplication
+    taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
 
     myTasks.forEach((task, index) => {
         const taskEntry = `
@@ -59,30 +59,35 @@ function displayTasks() {
             </div>
         </button>
         `;
-
         taskEntries.innerHTML += taskEntry;
     });
 }
 
-//
+// Delete Task functionality using Event Delegation
+function deleteTaskFunction() {
+    taskEntries.addEventListener("click", (event) => {
+        // Check if a delete button was clicked
+        if (event.target.classList.contains("fa-trash")) {
+            const taskIndex = parseInt(event.target.getAttribute("data-index"), 10);
+            myTasks.splice(taskIndex, 1); // Remove task from the array
+            displayTasks(); // Re-render the task list
+        }
+    });
+}
 
 // Modal open and close function
-
-// When the user clicks the "Add" button, open the modal and display the overlay.
 function addTaskButton() {
-    addBtn.onclick = function() {
-        modal.style.display = "block"
+    addBtn.onclick = function () {
+        modal.style.display = "block";
         overlay.style.display = "block";
-    }
+    };
 }
 
-// When the user clicks the close button, hide the modal and overlay.
 function closeButton() {
-    closeBtn.onclick = function() {
+    closeBtn.onclick = function () {
         modal.style.display = "none";
         overlay.style.display = "none";
-    }
+    };
 }
 
-export { submitButton, closeButton, addTaskButton};
-
+export { submitButton, closeButton, addTaskButton, deleteTaskFunction };
