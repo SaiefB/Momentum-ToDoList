@@ -40,6 +40,8 @@ header {
   height: 87%;
 }
 
+
+/* -------------------------- Aside Section ---------------------------------- */
 aside {
   height: 100%;
   background-color: var(--accent-lightgrey);
@@ -60,6 +62,8 @@ aside button {
 
 .projectBtn {
   font-size: 1rem;
+  width: 100%;
+  border-radius: 10px;
 }
 
 aside h1, aside button, aside p {
@@ -81,7 +85,7 @@ aside button:hover, aside p:hover {
 /* Content Section */
 
 .inboxSection {
-  display: block;
+  display: none;
 }
 
 .todaySection {
