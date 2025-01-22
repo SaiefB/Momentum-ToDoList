@@ -13,6 +13,7 @@ const modal = document.querySelector(".formSection")
 const overlay = document.querySelector(".overlay")
 const closeBtn = document.querySelector(".modalClose");
 const addBtn = document.querySelector(".contentAddButton");
+const taskEntries = document.querySelector(".taskItemContainer");
 
 
 // Submit button functionality
@@ -27,6 +28,7 @@ function submitButton() {
         if (validateForm(task, description, date, priority)) {
             addTask(task, description, date, priority);
             clearForm();
+            displayTasks();
         }
     };
 }
@@ -38,6 +40,31 @@ function clearForm() {
     dateInput.value = "";
     priorityInput.value = "";
 }
+
+function displayTasks() {
+    taskEntries.innerHTML = ' '; // clears the current task entry to avoid duplication
+
+    myTasks.forEach((task, index) => {
+        const taskEntry = `
+        <button class="contentButton" data-index="${index}">
+            <div class="contentButtonLeftDiv">
+                <i class="fa-regular fa-circle"></i>
+                <p>${task.taskTitle}</p>
+                <p>${task.description}</p>
+                <p>${task.priority}</p>
+            </div>
+            <div class="contentButtonRightDiv">
+                <p>${task.dueDate}</p>
+                <p class="delete"><i class="fa-solid fa-trash" data-index="${index}"></i></p>
+            </div>
+        </button>
+        `;
+
+        taskEntries.innerHTML += taskEntry;
+    });
+}
+
+//
 
 // Modal open and close function
 
