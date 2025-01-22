@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm, myTasks } from "./logic";
+import { addTask, validateForm, myTasks, removeFromArray} from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -69,8 +69,7 @@ function deleteTaskFunction() {
     taskEntries.addEventListener("click", (event) => {
         // Check if a delete button was clicked
         if (event.target.classList.contains("fa-trash")) {
-            const taskIndex = parseInt(event.target.getAttribute("data-index"), 10);
-            myTasks.splice(taskIndex, 1); // Remove task from the array
+            removeFromArray();
             displayTasks(); // Re-render the task list
         }
     });
@@ -99,6 +98,7 @@ function cancelButton() {
 }
 
 /* --------- Inbox/Today/This Week Section ------------ */
+
 const inboxSection = document.querySelector(".inboxSection");
 const inboxSectionBtn = document.querySelector(".inboxBtn");
 const todaySection = document.querySelector(".todaySection");
@@ -129,6 +129,10 @@ function weekSectionFunction() {
         weekSection.style.display = "block"
     }
 }
+
+/* --------- Project Section ------------ */
+
+
 
 
 

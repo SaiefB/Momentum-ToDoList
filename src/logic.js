@@ -28,6 +28,12 @@ function addTask(taskTitle, description, dueDate, priority) {
     console.log("Task Array:", myTasks);
 }
 
+//Function to remove task from array
+function removeFromArray() {
+    const taskIndex = parseInt(event.target.getAttribute("data-index"), 10);
+            myTasks.splice(taskIndex, 1); // Remove task from the array
+}
+
    
 
-export { validateForm, addTask, myTasks};
+export { validateForm, addTask, myTasks, removeFromArray};
