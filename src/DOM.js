@@ -14,6 +14,7 @@ const overlay = document.querySelector(".overlay");
 const closeBtn = document.querySelector(".modalClose");
 const addBtn = document.querySelector(".contentAddButton");
 const taskEntries = document.querySelector(".taskItemContainer");
+const modalCancel = document.querySelector(".cancelBtn");
 
 // Submit button functionality
 function submitButton() {
@@ -90,4 +91,11 @@ function closeButton() {
     };
 }
 
-export { submitButton, closeButton, addTaskButton, deleteTaskFunction };
+function cancelButton() {
+    modalCancel.onclick =function() {
+        modal.style.display = "none";
+        overlay.style.display = "none"; 
+    }
+}
+
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction };
