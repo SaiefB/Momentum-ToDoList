@@ -98,4 +98,12 @@ function cancelButton() {
     }
 }
 
+/* --------- Today Section ------------ */
+const todaySection = document.querySelector(".todaySection");
+const todaySectionBtn = document.querySelector(".todayBtn")
+
+function todaySectionFunction() {
+
+}
+
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction };
