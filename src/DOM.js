@@ -132,12 +132,24 @@ function weekSectionFunction() {
 
 /* --------- Project Section ------------ */
 
-const projectList = document.querySelector(".projectItem");
 const projectAddBtn = document.querySelector(".projectAddBtn");
+const projectAddModal = document.querySelector(".projectFormSection");
+const cancelNewProjectBtn = document.querySelector(".projectCancelBtn");
+
+function addNewProject() {
+    projectAddBtn.onclick = function() {
+        projectAddBtn.style.display = "none";
+        projectAddModal.style.display = "flex"
+    }
+}
+
+function closeNewProject() {
+    cancelNewProjectBtn.onclick = function() {
+        projectAddBtn.style.display = "flex";
+        projectAddModal.style.display = "none";
+    }
+}
 
 
 
-
-
-
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction};
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject};

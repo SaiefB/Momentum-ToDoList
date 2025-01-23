@@ -95,7 +95,7 @@ aside button:hover, aside p:hover {
 /* -------------------------------------- Project Section ----------------------------------- */
 
 .projectFormSection {
-  display: flex;
+  display: none;
   cursor: default;
   background-color: var(--primary-black);
   align-items: center;
