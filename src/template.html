@@ -18,11 +18,20 @@
             <button class="todayBtn"><i class="fa-solid fa-calendar-day"></i>Today</button>
             <button class="weekBtn"><i class="fa-solid fa-calendar-week"></i>This Week</button>
             <h1>Projects</h1>
-            <ul>
-                <li><button class="projectBtn"><i class="fa-solid fa-box-archive"></i>Homework</button></li>
+            <ul class="projectList">
+                <li><button class="projectBtn projectItem"><i class="fa-solid fa-box-archive"></i>Homework</button></li>
             </ul>
-            
-            <button class="projectBtn"><i class="fa-regular fa-square-plus"></i>Add Project</button>
+            <button class="projectBtn projectAddBtn"><i class="fa-regular fa-square-plus"></i>Add Project</button>
+
+            <button class="projectBtn projectFormSection" id="projectFormSection">
+                <i class="fa-solid fa-box-archive"></i>
+                <form class="projectForm" action="">
+                    <input class="projectInput" type="text" id="projectInput" name="projectInput" placeholder="Project Name">
+                    <p class="projectCancelBtn">✗</p>
+                    <input class="projectSubmit" type="submit" value="✔">
+                </form>
+            </button>
+
         </aside>
 
         
@@ -107,7 +116,7 @@
 
         </section>
 
-        <!-- <section class="projectsSection content">
+        <section class="projectsSection content">
             <h1>Project 1</h1>
 
             <button class="contentButton">
@@ -121,7 +130,11 @@
                 </div>
             </button>
 
-        </section> -->
+            <button class="contentAddButton">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+
+        </section>
 
 
         <section class="formSection" id="formSection">
@@ -135,7 +148,6 @@
     
                 <div class="descriptionInputDiv">
                     <label for="description"></label>
-                    <!-- <input class="description" type="text" id="description" name="description" placeholder="Description"> -->
                     <textarea class="description" name="description" id="description" placeholder="Description"></textarea>
                 </div>
     

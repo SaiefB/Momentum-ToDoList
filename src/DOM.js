@@ -132,6 +132,10 @@ function weekSectionFunction() {
 
 /* --------- Project Section ------------ */
 
+const projectList = document.querySelector(".projectItem");
+const projectAddBtn = document.querySelector(".projectAddBtn");
+
+
 
 
 

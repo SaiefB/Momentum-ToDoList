@@ -15,6 +15,7 @@
 
   /* Accent Colors */
   --accent-blue: #0197F6;
+  --accent-darkblue: #0057bb;
   --accent-grey: #9A9A9A;
   --accent-lightgrey: #D6D6D6;
 }
@@ -41,7 +42,8 @@ header {
 }
 
 
-/* -------------------------- Aside Section ---------------------------------- */
+/* --------------------------------------- Aside Section ---------------------------------- */
+
 aside {
   height: 100%;
   background-color: var(--accent-lightgrey);
@@ -60,6 +62,10 @@ aside button {
   gap: 10px;
 }
 
+aside li {
+  list-style: none;
+}
+
 .projectBtn {
   font-size: 1rem;
   width: 100%;
@@ -73,6 +79,10 @@ aside h1, aside button, aside p {
   border-radius: 15px;
 }
 
+aside h1 {
+  margin-bottom: 0px;
+}
+
 aside button, aside p {
   cursor: pointer;
 }
@@ -82,7 +92,70 @@ aside button:hover, aside p:hover {
   background-color: var(--accent-grey);
 }
 
-/* Content Section */
+/* -------------------------------------- Project Section ----------------------------------- */
+
+.projectFormSection {
+  display: flex;
+  cursor: default;
+  background-color: var(--primary-black);
+  align-items: center;
+}
+
+.projectFormSection:hover {
+  background-color: var(--primary-black);
+}
+
+.projectFormSection i {
+  color: var(--accent-lightgrey);
+}
+
+.projectForm {
+  display: flex;
+  gap: 5%;
+  cursor: default;
+}
+
+.projectInput {
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 60%;
+  padding: 5px 4px;
+  border-radius: 10px;
+}
+
+.projectCancelBtn {
+  color: var(--accent-lightgrey);
+  margin: 0px;
+  padding: 0;
+  border-radius: 0;
+  width: 15%;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.projectCancelBtn:hover {
+  color: var(--primary-black);
+  border-radius: 10px;
+}
+
+.projectSubmit {
+  width: 15%;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: var(--accent-darkblue);
+  color: var(--accent-lightgrey);
+}
+
+.projectSubmit:hover {
+  background-color: var(--accent-blue);
+  color: var(--primary-black);
+}
+
+
+
+/* -------------------------------------- Content Section ------------------------------------ */
 
 .inboxSection {
   display: none;
@@ -168,7 +241,7 @@ aside button:hover, aside p:hover {
   cursor: pointer;
 }
 
-/* Overlay Section */
+/* --------------------------------------- Overlay Section ------------------------------------- */
 
 .overlay{
   position: absolute;
@@ -181,7 +254,8 @@ aside button:hover, aside p:hover {
   display: none;
 }
 
-/* Specific Styles - Modal Section*/
+/* --------------------------- Specific Styles - Modal Section -------------------------------- */
+
 .formSection {
   z-index: 11;
   display: none;
@@ -292,7 +366,7 @@ input {
 
 
 
-/* Footer Section */
+/* ------------------------------------ Footer Section --------------------------------- */
 
 footer {
   display: flex;
