@@ -39,7 +39,7 @@ function clearForm() {
     descriptionInput.value = "";
     dateInput.value = "";
     priorityInput.value = "";
-}
+};
 
 // Display tasks
 function displayTasks() {
@@ -62,7 +62,7 @@ function displayTasks() {
         `;
         taskEntries.innerHTML += taskEntry;
     });
-}
+};
 
 // Delete Task functionality using Event Delegation
 function deleteTaskFunction() {

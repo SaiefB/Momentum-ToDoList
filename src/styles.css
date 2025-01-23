@@ -111,16 +111,17 @@ aside button:hover, aside p:hover {
 
 .projectForm {
   display: flex;
-  gap: 5%;
+  gap: 2%;
   cursor: default;
+  width: 100%;
 }
 
 .projectInput {
   height: 100%;
   font-size: 1rem;
   font-weight: 700;
-  width: 60%;
-  padding: 5px 4px;
+  width: 66%;
+  padding: 5px 8px;
   border-radius: 10px;
 }
 

@@ -1,7 +1,7 @@
 //Logic.js
 const myTasks = [];
 
-// Class Constructor
+// Inbox Class Constructor
 class Task {
     constructor(taskTitle, description, dueDate, priority) {
         this.taskTitle = taskTitle;
