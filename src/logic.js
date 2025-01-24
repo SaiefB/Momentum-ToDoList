@@ -34,6 +34,32 @@ function removeFromArray() {
             myTasks.splice(taskIndex, 1); // Remove task from the array
 }
 
+
+// Project Section
+const myProjects = [];
+
+// Project Class Constructor
+class Project {
+    constructor(projectTitle) {
+        this.projectTitle = projectTitle;
+    }
+};
+
+function validateProjectForm() {
+    const projectTitle = projectInput.value;
+    if (projectTitle === "") {
+        alert("Please enter a project title");
+        return false;
+    }
+    return true;
+}
+
+function addProject(projectTitle) {
+    const newProject = new Project(projectTitle);
+    myProjects.push(newProject);
+    console.log("New Project Added:", newProject);
+    console.log("Project Array:", myProjects);
+}
    
 
-export { validateForm, addTask, myTasks, removeFromArray};
+export { validateForm, addTask, myTasks, removeFromArray, validateProjectForm, addProject, myProjects};

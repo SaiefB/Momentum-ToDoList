@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm, myTasks, removeFromArray} from "./logic";
+import { addTask, validateForm, myTasks, removeFromArray, validateProjectForm, addProject, myProjects} from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -136,6 +136,10 @@ const projectAddBtn = document.querySelector(".projectAddBtn");
 const projectAddModal = document.querySelector(".projectFormSection");
 const cancelNewProjectBtn = document.querySelector(".projectCancelBtn");
 
+const projectSubmitBtn = document.querySelector(".projectSubmit");
+const projectInput = document.querySelector(".projectInput");
+const mainSection = document.querySelector(".mainSection")
+
 function addNewProject() {
     projectAddBtn.onclick = function() {
         projectAddBtn.style.display = "none";
@@ -150,6 +154,41 @@ function closeNewProject() {
     }
 }
 
+function confirmNewProject() {
+    projectSubmitBtn.onclick = function(event) {
+        event.preventDefault();
+        const project = projectInput.value;
+
+        if (validateProjectForm(project)) {
+            addProject(project);
+            clearProjectForm();
+            displayProjects();
+        }
 
 
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject};
+    }
+
+};
+
+// Clear Project Input
+function clearProjectForm() {
+    projectInput.value = "";
+};
+
+// Display Projects
+function displayProjects() {
+    mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
+
+    myProjects.forEach((project, index) => {
+        const projectEntry = `
+        <button class="projectButton" data-index="${index}">
+            <h1>${project.projectTitle}</h1>
+            <div class="taskItemContainer"></div>
+        </button>
+        `;
+        mainSection.innerHTML += projectEntry;
+    })
+}
+
+// Export
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects };
