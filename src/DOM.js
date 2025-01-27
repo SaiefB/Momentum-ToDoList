@@ -110,7 +110,8 @@ function inboxSectionFunction() {
     inboxSectionBtn.onclick = function() {
         inboxSection.style.display = "block";
         todaySection.style.display = "none";
-        weekSection.style.display = "none"
+        weekSection.style.display = "none";
+        mainSection.style.display = "none";
     }
 }
 
@@ -119,6 +120,7 @@ function todaySectionFunction() {
         inboxSection.style.display = "none";
         todaySection.style.display = "block";
         weekSection.style.display = "none"
+        mainSection.style.display = "none";
     }
 }
 
@@ -127,6 +129,7 @@ function weekSectionFunction() {
         inboxSection.style.display = "none";
         todaySection.style.display = "none";
         weekSection.style.display = "block"
+        mainSection.style.display = "none";
     }
 }
 
