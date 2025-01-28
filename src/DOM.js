@@ -142,6 +142,7 @@ const cancelNewProjectBtn = document.querySelector(".projectCancelBtn");
 const projectSubmitBtn = document.querySelector(".projectSubmit");
 const projectInput = document.querySelector(".projectInput");
 const mainSection = document.querySelector(".mainSection")
+const projectList = document.querySelector(".projectList");
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
@@ -181,6 +182,7 @@ function clearProjectForm() {
 // Display Projects
 function displayProjects() {
     mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
+    projectList.innerHTML = ""; // Clears the current project entries to avoid duplication  
 
     myProjects.forEach((project, index) => {
         const projectEntry = `
@@ -190,6 +192,11 @@ function displayProjects() {
         </button>
         `;
         mainSection.innerHTML += projectEntry;
+
+        const projectAsideEntry = `
+        <li><button class="projectBtn projectItem"><i class="fa-solid fa-box-archive"></i>${project.projectTitle}</button></li>
+        `;
+        projectList.innerHTML += projectAsideEntry
     })
 }
 
