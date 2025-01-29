@@ -94,6 +94,8 @@ aside button:hover, aside p:hover {
 
 /* -------------------------------------- Project Section ----------------------------------- */
 
+
+
 .projectFormSection {
   display: none;
   cursor: default;
@@ -154,7 +156,12 @@ aside button:hover, aside p:hover {
   color: var(--primary-black);
 }
 
-
+.projectButton {
+  background-color: var(--primary-white);
+  border: none;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
 
 /* -------------------------------------- Content Section ------------------------------------ */
 
