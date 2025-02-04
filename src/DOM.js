@@ -143,6 +143,7 @@ const projectSubmitBtn = document.querySelector(".projectSubmit");
 const projectInput = document.querySelector(".projectInput");
 const mainSection = document.querySelector(".mainSection")
 const projectList = document.querySelector(".projectList");
+const projectListItem = document.querySelector(".projectItem");
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
@@ -169,7 +170,6 @@ function confirmNewProject() {
             displayProjects();
         }
     }
-
 };
 
 // Clear Project Input
@@ -197,6 +197,12 @@ function displayProjects() {
         projectList.innerHTML += projectAsideEntry
     })
 }
+
+/* function selectProject() {
+    projectListItem.onclick = function() {
+        mainSection.innerHTML = "";
+    }
+} */
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects };

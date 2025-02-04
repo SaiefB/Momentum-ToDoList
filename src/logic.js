@@ -34,7 +34,6 @@ function removeFromArray() {
             myTasks.splice(taskIndex, 1); // Remove task from the array
 }
 
-
 // Project Section
 const myProjects = [];
 
