@@ -165,9 +165,12 @@ function confirmNewProject() {
         const project = projectInput.value;
 
         if (validateProjectForm(project)) {
+            mainSection.innerHTML = "";
+            console.log("main section cleared")
             addProject(project);
             clearProjectForm();
             displayProjects();
+            console.log("main section updated")
         }
     }
 };
@@ -198,11 +201,11 @@ function displayProjects() {
     })
 }
 
-/* function selectProject() {
+function selectProject() {
     projectListItem.onclick = function() {
         mainSection.innerHTML = "";
     }
-} */
+}
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects };
