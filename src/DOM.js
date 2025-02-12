@@ -19,6 +19,7 @@ const modalCancel = document.querySelector(".cancelBtn");
 // Submit button functionality
 function submitButton() {
     submitBtn.onclick = function (event) {
+        console.log("Task submitButton clicked")
         event.preventDefault();
         const task = taskInput.value;
         const description = descriptionInput.value;
@@ -35,6 +36,7 @@ function submitButton() {
 
 // Clear form fields
 function clearForm() {
+    console.log("Task form cleared");
     taskInput.value = "";
     descriptionInput.value = "";
     dateInput.value = "";
@@ -44,6 +46,7 @@ function clearForm() {
 // Display tasks
 function displayTasks() {
     taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
+    console.log("taskEntries innerHTML cleared");
 
     myTasks.forEach((task, index) => {
         const taskEntry = `
@@ -61,12 +64,14 @@ function displayTasks() {
         </button>
         `;
         taskEntries.innerHTML += taskEntry;
+        console.log("taskEntries innerHTML updated with new task")
     });
 };
 
 // Delete Task functionality using Event Delegation
 function deleteTaskFunction() {
     taskEntries.addEventListener("click", (event) => {
+        console.log("deleteTask button clicked")
         // Check if a delete button was clicked
         if (event.target.classList.contains("fa-trash")) {
             removeFromArray();
@@ -78,22 +83,28 @@ function deleteTaskFunction() {
 // Modal open and close function
 function addTaskButton() {
     addBtn.onclick = function () {
+        console.log("addTaskButton clicked");
         modal.style.display = "block";
         overlay.style.display = "block";
+        console.log("taskModal displayed and overlay added");
     };
 }
 
 function closeButton() {
     closeBtn.onclick = function () {
+        console.log("Task closeButton clicked");
         modal.style.display = "none";
         overlay.style.display = "none";
+        console.log("taskModal and overlay removed");
     };
 }
 
 function cancelButton() {
     modalCancel.onclick = function() {
+        console.log("Task cancel button clicked");
         modal.style.display = "none";
         overlay.style.display = "none"; 
+        console.log("taskModal and overlay removed");
     }
 }
 
@@ -108,28 +119,43 @@ const weekSectionBtn = document.querySelector(".weekBtn");
 
 function inboxSectionFunction() {
     inboxSectionBtn.onclick = function() {
+        console.log("inboxSection button clicked");
         inboxSection.style.display = "block";
         todaySection.style.display = "none";
         weekSection.style.display = "none";
         mainSection.style.display = "none";
+        console.log("inboxSection displayed");
+        console.log("todaySection removed");
+        console.log("weekSection removed");
+        console.log("mainSection removed");
     }
 }
 
 function todaySectionFunction() {
     todaySectionBtn.onclick = function() {
+        console.log("todaySection button clicked");
         inboxSection.style.display = "none";
         todaySection.style.display = "block";
         weekSection.style.display = "none"
         mainSection.style.display = "none";
+        console.log("inboxSection removed");
+        console.log("todaySection displayed");
+        console.log("weekSection removed");
+        console.log("mainSection removed");
     }
 }
 
 function weekSectionFunction() {
     weekSectionBtn.onclick = function() {
+        console.log("weekSection button clicked");
         inboxSection.style.display = "none";
         todaySection.style.display = "none";
         weekSection.style.display = "block"
         mainSection.style.display = "none";
+        console.log("inboxSection removed");
+        console.log("todaySection removed");
+        console.log("weekSection displayed"); 
+        console.log("mainSection removed");
     }
 }
 
@@ -147,26 +173,33 @@ const projectListItem = document.querySelector(".projectItem");
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
+        console.log("addNewProject button clicked");
         projectAddBtn.style.display = "none";
-        projectAddModal.style.display = "flex"
+        projectAddModal.style.display = "flex";
+        console.log("projectAddBtn removed");
+        console.log("projectAddModal displayed");
     }
 }
 
 function closeNewProject() {
     cancelNewProjectBtn.onclick = function() {
+        console.log("createNewProjectBtn clicked");
         projectAddBtn.style.display = "flex";
         projectAddModal.style.display = "none";
+        console.log("projectAddBtn displayed");
+        console.log("projectAddModal removed");
     }
 }
 
 function confirmNewProject() {
     projectSubmitBtn.onclick = function(event) {
+        console.log("projectSubmitBtn clicked");
         event.preventDefault();
         const project = projectInput.value;
 
         if (validateProjectForm(project)) {
             mainSection.innerHTML = "";
-            console.log("main section cleared")
+            console.log("main section cleared");
             addProject(project);
             clearProjectForm();
             displayProjects();
@@ -178,12 +211,15 @@ function confirmNewProject() {
 // Clear Project Input
 function clearProjectForm() {
     projectInput.value = "";
+    console.log("projectForm cleared");
 };
 
 // Display Projects
 function displayProjects() {
     mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
-    projectList.innerHTML = ""; // Clears the current project entries to avoid duplication  
+    projectList.innerHTML = ""; // Clears the current project entries to avoid duplication 
+    console.log("mainSection cleared");
+    console.log("projectList cleared");
 
     myProjects.forEach((project, index) => {
         const projectEntry = `
@@ -198,14 +234,15 @@ function displayProjects() {
         <li><button class="projectBtn projectItem"><i class="fa-solid fa-box-archive"></i>${project.projectTitle}</button></li>
         `;
         projectList.innerHTML += projectAsideEntry
+        console.log("projectList updated with new project");
     })
 }
 
-function selectProject() {
+/* function selectProject() {
     projectListItem.onclick = function() {
         mainSection.innerHTML = "";
     }
-}
+} */
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects };
