@@ -1,9 +1,11 @@
 //Logic.js
+console.log("myTasks array created")
 const myTasks = [];
 
 // Inbox Class Constructor
 class Task {
     constructor(taskTitle, description, dueDate, priority) {
+        console.log("Task Constructor Initiated")
         this.taskTitle = taskTitle;
         this.description = description;
         this.dueDate = dueDate;
@@ -13,51 +15,66 @@ class Task {
 
 // Validates the form - checks if all fields are entered
 function validateForm(task, description, date, priority) {
+    console.log("validateForm check initiated");
     if (task === "" || description === "" || date === "" || priority === "") {
         alert("Please complete all required fields");
+        console.log("validateForm check: false");
         return false;
     }
+    console.log("validateForm check: true");
     return true;
 }
 
 // Function to Add Task to Inbox
 function addTask(taskTitle, description, dueDate, priority) {
+    console.log("addTask Function initiated")
     const newTask = new Task(taskTitle, description, dueDate, priority);
     myTasks.push(newTask);
-    console.log("New Task Added:", newTask);
-    console.log("Task Array:", myTasks);
+    console.log("newTask pushed to myTasks, newTask array: ", newTask);
+    console.log("myTask Array:", myTasks);
 }
 
 //Function to remove task from array
 function removeFromArray() {
+    console.log("current myTasks array: " + myTasks);
+    console.log("removeFromArray function initiated")
     const taskIndex = parseInt(event.target.getAttribute("data-index"), 10);
             myTasks.splice(taskIndex, 1); // Remove task from the array
+            console.log("selected task removed from myTask array")
+            console.log("updated myTask array: " + myTasks);
 }
 
 // Project Section
+console.log("myProjects array created");
 const myProjects = [];
 
 // Project Class Constructor
 class Project {
     constructor(projectTitle) {
         this.projectTitle = projectTitle;
+        console.log("Project constructor initiated");
     }
 };
 
 function validateProjectForm() {
+    console.log("validateProjectForm function initiated");
     const projectTitle = projectInput.value;
+    console.log("projectTitle saved");
     if (projectTitle === "") {
         alert("Please enter a project title");
+        console.log("validateProjectForm check: false");
         return false;
     }
+    console.log("validateProjectForm check: true");
     return true;
 }
 
 function addProject(projectTitle) {
+    console.log("addProject function initiated");
     const newProject = new Project(projectTitle);
     myProjects.push(newProject);
-    console.log("New Project Added:", newProject);
-    console.log("Project Array:", myProjects);
+    console.log("newProject pushed to myProjects array, newProject array: ", newProject);
+    console.log("updated myProject Array:", myProjects);
 }
    
 
