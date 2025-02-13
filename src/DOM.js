@@ -1,7 +1,7 @@
 // DOM.js
 
 //Import
-import { addTask, validateForm, myTasks, removeFromArray, validateProjectForm, addProject, myProjects} from "./logic";
+import { addTask, validateForm, myTasks, removeFromArray, validateProjectForm, addProject, myProjects, removeFromProjectArray} from "./logic";
 
 // Collect DOM elements
 const taskInput = document.querySelector(".task");
@@ -76,7 +76,7 @@ function deleteTaskFunction() {
         if (event.target.classList.contains("fa-trash")) {
             removeFromArray();
             displayTasks(); // Re-render the task list
-        }
+        };
     });
 }
 
@@ -223,7 +223,7 @@ function displayProjects() {
 
     myProjects.forEach((project, index) => {
         const projectEntry = `
-        <button class="projectButton">
+        <button class="projectButton" data-index="${index}">
             <h1>${project.projectTitle}</h1>
             <div class="taskItemContainer"></div>
         </button>
@@ -246,15 +246,18 @@ function displayProjects() {
     })
 }
 
-function deleteProjectFunction() {
-    
-}
+// TODO: Delete Project functionality using Event Delegation
 
-/* function selectProject() {
-    projectListItem.onclick = function() {
-        mainSection.innerHTML = "";
-    }
-} */
+function deleteProjectFunction() {
+    projectList.addEventListener("click", (event) => {
+        console.log("deleteProject button clicked")
+        // check if a delete button was clicked
+        if (event.target.classList.contains("fa-trash")) {
+            removeFromProjectArray();
+            displayProjects(); // re-render the project list
+        };
+    });
+};
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects };

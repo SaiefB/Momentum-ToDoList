@@ -76,6 +76,16 @@ function addProject(projectTitle) {
     console.log("newProject pushed to myProjects array, newProject array: ", newProject);
     console.log("updated myProject Array:", myProjects);
 }
+
+// Function to remove project from array
+function removeFromProjectArray() {
+    console.log("current myProjects array: " + myProjects);
+    console.log("removeFromProjectArray function initiated");
+    const projectIndex = parseInt(event.target.getAttribute("data-index"), 10);
+        myProjects.splice(projectIndex, 1); // Remove project from the array
+        console.log("selected project removed from myProjects array");
+        console.log("updated myProjects array: " + myProjects);
+}
    
 
-export { validateForm, addTask, myTasks, removeFromArray, validateProjectForm, addProject, myProjects};
+export { validateForm, addTask, myTasks, removeFromArray, validateProjectForm, addProject, myProjects, removeFromProjectArray};
