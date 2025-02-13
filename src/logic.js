@@ -52,6 +52,7 @@ const myProjects = [];
 class Project {
     constructor(projectTitle) {
         this.projectTitle = projectTitle;
+        this.tasks = []; // TODO: New array to hold tasks for this specific project
         console.log("Project constructor initiated");
     }
 };
