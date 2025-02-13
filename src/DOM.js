@@ -223,7 +223,7 @@ function displayProjects() {
 
     myProjects.forEach((project, index) => {
         const projectEntry = `
-        <button class="projectButton" data-index="${index}">
+        <button class="projectButton">
             <h1>${project.projectTitle}</h1>
             <div class="taskItemContainer"></div>
         </button>
@@ -231,11 +231,23 @@ function displayProjects() {
         mainSection.innerHTML += projectEntry;
 
         const projectAsideEntry = `
-        <li><button class="projectBtn projectItem"><i class="fa-solid fa-box-archive"></i>${project.projectTitle}</button></li>
+        <li>
+            <button class="projectBtn projectItem" data-index="${index}">
+                <i class="fa-solid fa-box-archive"></i>
+                ${project.projectTitle}
+                <p class="projectDelete">
+                    <i class="fa-solid fa-trash" data-index="${index}"></i>
+                </p>
+            </button>
+        </li>
         `;
         projectList.innerHTML += projectAsideEntry
         console.log("projectList updated with new project");
     })
+}
+
+function deleteProjectFunction() {
+    
 }
 
 /* function selectProject() {
