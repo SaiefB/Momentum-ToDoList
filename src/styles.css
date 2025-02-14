@@ -3,7 +3,7 @@
 *{
   margin: 0;
   padding: 0;
-  border: 1px dashed rgb(255, 0, 0);
+/*   border: 1px dashed rgb(255, 0, 0); */
   box-sizing: border-box;
   font-family: "Roboto", serif;
 }
@@ -70,6 +70,27 @@ aside li {
   font-size: 1rem;
   width: 100%;
   border-radius: 10px;
+}
+
+.projectItemLeftDiv {
+  width: 75%;
+  display: flex;
+  justify-content: left;
+  gap: 5%;
+}
+
+.projectItemRightDiv {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.projectDelete {
+  font-size: 1rem;
+  width: 10%;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 aside h1, aside button, aside p {

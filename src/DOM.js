@@ -202,8 +202,8 @@ function confirmNewProject() {
             console.log("main section cleared");
             addProject(project);
             clearProjectForm();
-            displayProjects();
-            console.log("main section updated")
+            displayProjectsAside();
+            console.log("projectList updated")
         }
     }
 };
@@ -213,6 +213,39 @@ function clearProjectForm() {
     projectInput.value = "";
     console.log("projectForm cleared");
 };
+
+function displayProjectsAside() {
+    projectList.innerHTML = ""; // Clears the current project entries to avoid duplication 
+    console.log("projectList cleared");
+
+    myProjects.forEach((project, index) => {
+        const projectAsideEntry = `
+        <li>
+            <button class="projectBtn projectItem" data-index="${index}">
+                <div class="projectItemLeftDiv">
+                    <i class="fa-solid fa-box-archive"></i>
+                    ${project.projectTitle}
+                </div>
+                <div class="projectItemRightDiv">
+                    <p class="projectDelete">
+                        <i class="fa-solid fa-trash" data-index="${index}"></i>
+                    </p>
+                </div>
+            </button>
+        </li>
+        `;
+        projectList.innerHTML += projectAsideEntry;
+        console.log("projectList updated with new project");
+    })
+    
+}
+
+function projectClicked() {
+    projectListItem.addEventListener("click", (event) => {
+        console.log("projectItem clicked");
+        
+    });
+}
 
 // Display Projects
 function displayProjects() {
@@ -225,28 +258,16 @@ function displayProjects() {
         const projectEntry = `
         <button class="projectButton" data-index="${index}">
             <h1>${project.projectTitle}</h1>
-            <div class="taskItemContainer"></div>
+            <div class="taskItemContainer">
+                <button class="contentAddButton">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
         </button>
         `;
         mainSection.innerHTML += projectEntry;
-
-        const projectAsideEntry = `
-        <li>
-            <button class="projectBtn projectItem" data-index="${index}">
-                <i class="fa-solid fa-box-archive"></i>
-                ${project.projectTitle}
-                <p class="projectDelete">
-                    <i class="fa-solid fa-trash" data-index="${index}"></i>
-                </p>
-            </button>
-        </li>
-        `;
-        projectList.innerHTML += projectAsideEntry
-        console.log("projectList updated with new project");
     })
 }
-
-// TODO: Delete Project functionality using Event Delegation
 
 function deleteProjectFunction() {
     projectList.addEventListener("click", (event) => {
