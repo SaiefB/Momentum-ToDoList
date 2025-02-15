@@ -59,7 +59,9 @@ function displayTasks() {
             </div>
             <div class="contentButtonRightDiv">
                 <p>${task.dueDate}</p>
-                <p class="delete"><i class="fa-solid fa-trash" data-index="${index}"></i></p>
+                <p class="delete">
+                    <i class="fa-solid fa-trash" data-index="${index}"></i>
+                </p>
             </div>
         </button>
         `;
@@ -220,7 +222,6 @@ function displayProjectsAside() {
 
     myProjects.forEach((project, index) => {
         const projectAsideEntry = `
-        <li>
             <button class="projectBtn projectItem" data-index="${index}">
                 <div class="projectItemLeftDiv">
                     <i class="fa-solid fa-box-archive"></i>
@@ -232,7 +233,6 @@ function displayProjectsAside() {
                     </p>
                 </div>
             </button>
-        </li>
         `;
         projectList.innerHTML += projectAsideEntry;
         console.log("projectList updated with new project");
@@ -240,19 +240,17 @@ function displayProjectsAside() {
     
 }
 
-function projectClicked() {
+/* function projectClicked() {
     projectListItem.addEventListener("click", (event) => {
-        console.log("projectItem clicked");
+        console.log("projectList clicked");
         
     });
-}
+} */
 
 // Display Projects
 function displayProjects() {
     mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
-    projectList.innerHTML = ""; // Clears the current project entries to avoid duplication 
     console.log("mainSection cleared");
-    console.log("projectList cleared");
 
     myProjects.forEach((project, index) => {
         const projectEntry = `
@@ -275,7 +273,7 @@ function deleteProjectFunction() {
         // check if a delete button was clicked
         if (event.target.classList.contains("fa-trash")) {
             removeFromProjectArray();
-            displayProjects(); // re-render the project list
+            displayProjectsAside(); // re-render the project list
         };
     });
 };
