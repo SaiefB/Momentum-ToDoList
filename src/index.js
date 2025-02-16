@@ -1,7 +1,7 @@
 //index.js
 
 import "./styles.css";
-import { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction} from "./DOM";
+import { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject } from "./DOM";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded and functions initialised");
@@ -18,4 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
     confirmNewProject();
     displayProjects();
     deleteProjectFunction();
+    changeProject();
 });

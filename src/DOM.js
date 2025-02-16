@@ -217,6 +217,7 @@ function clearProjectForm() {
 };
 
 function displayProjectsAside() {
+    console.log("displayProjectsAside function initiated");
     projectList.innerHTML = ""; // Clears the current project entries to avoid duplication 
     console.log("projectList cleared");
 
@@ -237,17 +238,66 @@ function displayProjectsAside() {
         projectList.innerHTML += projectAsideEntry;
         console.log("projectList updated with new project");
     })
-    
 }
 
-/* function projectClicked() {
-    projectListItem.addEventListener("click", (event) => {
-        console.log("projectList clicked");
-        
+function deleteProjectFunction() {
+    console.log("deleteProjectFunction initiated");
+    projectList.addEventListener("click", (event) => {
+        // check if a delete button was clicked
+        if (event.target.classList.contains("fa-trash")) {
+            console.log("deleteProject button clicked")
+            removeFromProjectArray();
+            displayProjectsAside(); // re-render the project list
+        };
     });
-} */
+};
 
-// Display Projects
+function changeProject() {
+    projectList.onclick = function() {
+        console.log("changeProject function initiated");
+        projectList.addEventListener("click", (event) => {
+            console.log("projectItem clicked");
+            
+            const projectBtn = event.target.closest(".projectBtn"); // Find the clicked project button
+            if (!projectBtn) return; // Ignore clicks outside a project button
+            
+            const projectIndex = parseInt(projectBtn.getAttribute("data-index"), 10);
+            if (!isNaN(projectIndex)) {
+                displayProjects(projectIndex); // Show only the selected project
+            }
+        });
+    };
+}
+
+function displayProjects(projectIndex) {
+    console.log("displayProjects function initiated");
+    mainSection.innerHTML = ""; // Clear previous project entries
+    console.log("mainSection cleared");
+
+    // Check if projectIndex is valid
+    if (projectIndex >= 0 && projectIndex < myProjects.length) {
+        const project = myProjects[projectIndex]; // Get the selected project
+
+        const projectEntry = `
+        <div class="projectContainer">
+            <h1>${project.projectTitle}</h1>
+            <div class="taskItemContainer">
+                <button class="contentAddButton">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        `;
+
+        mainSection.innerHTML = projectEntry; // Display only the selected project
+        console.log(`Displayed project: ${project.projectTitle}`);
+    } else {
+        console.log("Invalid project index:", projectIndex);
+    }
+}
+
+
+/* // Display Projects
 function displayProjects() {
     mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
     console.log("mainSection cleared");
@@ -265,18 +315,7 @@ function displayProjects() {
         `;
         mainSection.innerHTML += projectEntry;
     })
-}
-
-function deleteProjectFunction() {
-    projectList.addEventListener("click", (event) => {
-        console.log("deleteProject button clicked")
-        // check if a delete button was clicked
-        if (event.target.classList.contains("fa-trash")) {
-            removeFromProjectArray();
-            displayProjectsAside(); // re-render the project list
-        };
-    });
-};
+} */
 
 // Export
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction };
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject };
