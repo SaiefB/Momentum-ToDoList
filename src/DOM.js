@@ -255,6 +255,14 @@ function deleteProjectFunction() {
 function changeProject() {
     projectList.onclick = function() {
         console.log("changeProject function initiated");
+        inboxSection.style.display = "none";
+        todaySection.style.display = "none";
+        weekSection.style.display = "none"
+        mainSection.style.display = "block";
+        console.log("inboxSection removed");
+        console.log("todaySection removed");
+        console.log("weekSection removed"); 
+        console.log("mainSection displayed");
         projectList.addEventListener("click", (event) => {
             console.log("projectItem clicked");
             
@@ -295,27 +303,6 @@ function displayProjects(projectIndex) {
         console.log("Invalid project index:", projectIndex);
     }
 }
-
-
-/* // Display Projects
-function displayProjects() {
-    mainSection.innerHTML = ""; // Clears the current project entries to avoid duplication  
-    console.log("mainSection cleared");
-
-    myProjects.forEach((project, index) => {
-        const projectEntry = `
-        <button class="projectButton" data-index="${index}">
-            <h1>${project.projectTitle}</h1>
-            <div class="taskItemContainer">
-                <button class="contentAddButton">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
-        </button>
-        `;
-        mainSection.innerHTML += projectEntry;
-    })
-} */
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject };

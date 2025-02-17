@@ -52,7 +52,13 @@ const myProjects = [];
 class Project {
     constructor(projectTitle) {
         this.projectTitle = projectTitle;
+        this.tasks = [];
         console.log("Project constructor initiated");
+    };
+
+    addProjectTask(task) {
+        this.tasks.push(task);
+        console.log(`Task "${task.taskTitle}" added to project: ${this.projectTitle}`);
     }
 };
 
@@ -89,3 +95,4 @@ function removeFromProjectArray() {
    
 
 export { validateForm, addTask, myTasks, removeFromArray, validateProjectForm, addProject, myProjects, removeFromProjectArray};
+
