@@ -301,26 +301,29 @@ function displayProjects(projectIndex) {
 
         mainSection.innerHTML = projectEntry; // Display only the selected project
         console.log(`Displayed project: ${project.projectTitle}`);
+        addProjectTask();
     } else {
         console.log("Invalid project index:", projectIndex);
     }
 }
 
 function addProjectTask() {
-    console.log("addProjectTask executed")
+    mainSection.onclick = function() {
+        console.log("addProjectTask function initiated");
 
-    mainSection.addEventListener("click", (event) => {
-        console.log("projectItem clicked");
-        //check if a projectItem button was clicked
-        if (event.target.classList.contains("projectItem")) {
-            console.log("projectItem button clicked");
+        mainSection.addEventListener("click", (event) => {
+            console.log("addProjectTask button clicked");
+            //check if a contentAddButton was clicked
+
+            const addProjectTaskBtn = event.target.closest(".contentAddButton");
+            if (!addProjectTaskBtn) return; // Ignore clicks outside a project button
 
             modal.style.display = "block";
             overlay.style.display = "block";
-        };
-
-    });
-};
+            console.log("taskModal displayed and overlay added");
+        });
+    };
+}
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask };
