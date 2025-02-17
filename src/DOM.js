@@ -172,6 +172,7 @@ const projectInput = document.querySelector(".projectInput");
 const mainSection = document.querySelector(".mainSection")
 const projectList = document.querySelector(".projectList");
 const projectListItem = document.querySelector(".projectItem");
+const contentAddBtn = document.querySelector(".contentAddButton");
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
@@ -304,5 +305,13 @@ function displayProjects(projectIndex) {
     }
 }
 
+function addProjectTask() {
+    console.log("addProjectTask executed")
+    contentAddBtn.onclick = function() {
+        console.log("contentAddBtn clicked");
+    }
+
+}
+
 // Export
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject };
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask };
