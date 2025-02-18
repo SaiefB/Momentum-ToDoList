@@ -323,7 +323,7 @@ function addProjectTask() {
             console.log("taskModal displayed and overlay added");
         });
     };
-}
+};
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask };

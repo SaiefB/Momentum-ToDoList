@@ -4,19 +4,20 @@ const myTasks = [];
 
 // Inbox Class Constructor
 class Task {
-    constructor(taskTitle, description, dueDate, priority) {
+    constructor(taskTitle, description, dueDate, priority, project) {
         console.log("Task Constructor Initiated")
         this.taskTitle = taskTitle;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.project = project;
     }
 }
 
 // Validates the form - checks if all fields are entered
 function validateForm(task, description, date, priority) {
     console.log("validateForm check initiated");
-    if (task === "" || description === "" || date === "" || priority === "") {
+    if (task === "" || description === "" || date === "" || priority === "" || project === "") {
         alert("Please complete all required fields");
         console.log("validateForm check: false");
         return false;
@@ -26,9 +27,9 @@ function validateForm(task, description, date, priority) {
 }
 
 // Function to Add Task to Inbox
-function addTask(taskTitle, description, dueDate, priority) {
+function addTask(taskTitle, description, dueDate, priority, project) {
     console.log("addTask Function initiated")
-    const newTask = new Task(taskTitle, description, dueDate, priority);
+    const newTask = new Task(taskTitle, description, dueDate, priority, project);
     myTasks.push(newTask);
     console.log("newTask pushed to myTasks, newTask array: ", newTask);
     console.log("myTask Array:", myTasks);
