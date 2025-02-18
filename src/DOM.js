@@ -325,5 +325,18 @@ function addProjectTask() {
     };
 };
 
+const select = document.querySelector(".projectInput");
+
+function modalProjectSelectOptions() {
+    console.log("modalProjectSelectOptions initiated");
+    myProjects.forEach((project, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.text = project.projectTitle;
+        select.appendChild(option);
+    })
+
+}
+
 // Export
-export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask };
+export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask, modalProjectSelectOptions};
