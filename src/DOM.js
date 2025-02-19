@@ -333,7 +333,7 @@ function addProjectTask() {
 
 const select = document.getElementById("projectDropDown");
 
-function modalProjectSelectOptions() {
+/* function modalProjectSelectOptions() {
     console.log("modalProjectSelectOptions initiated");
 
     console.log("select: ", select)
@@ -345,6 +345,20 @@ function modalProjectSelectOptions() {
         select.add(option);
     })
     console.log("select updated with new project:" + select.innerHTML);
+} */
+
+function modalProjectSelectOptions() {
+    let select = document.getElementById("projectDropDown");
+    console.log("modalProjectSelectOptions initiated");
+
+    console.log("select: ", select)
+    console.log("myProject: ", myProjects);
+    myProjects.forEach((project, index) => {
+        let option = document.createElement("option");
+        option.value = `value${index + 1}`;
+        option.text = project.projectTitle;
+        select.add(option);
+    })
 }
 
 // Export
