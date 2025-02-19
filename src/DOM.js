@@ -207,7 +207,8 @@ function confirmNewProject() {
             addProject(project);
             clearProjectForm();
             displayProjectsAside();
-            console.log("projectList updated")
+            console.log("projectList updated");
+            modalProjectSelectOptions();
         }
     }
 };
@@ -325,17 +326,18 @@ function addProjectTask() {
     };
 };
 
-const select = document.querySelector(".projectInput");
+const select = document.querySelector("#projectInput");
 
 function modalProjectSelectOptions() {
     console.log("modalProjectSelectOptions initiated");
+    console.log("select: ", select)
+    console.log("myProject: ", myProjects);
     myProjects.forEach((project, index) => {
         const option = document.createElement("option");
         option.value = index;
         option.text = project.projectTitle;
         select.appendChild(option);
     })
-
 }
 
 // Export
