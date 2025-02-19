@@ -351,6 +351,8 @@ function modalProjectSelectOptions() {
     let select = document.getElementById("projectDropDown");
     console.log("modalProjectSelectOptions initiated");
 
+    select.innerHTML = ""; // Clear previous project entries
+
     console.log("select: ", select)
     console.log("myProject: ", myProjects);
     myProjects.forEach((project, index) => {
