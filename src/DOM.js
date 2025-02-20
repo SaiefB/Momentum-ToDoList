@@ -16,6 +16,31 @@ const addBtn = document.querySelector(".contentAddButton");
 const taskEntries = document.querySelector(".taskItemContainer");
 const modalCancel = document.querySelector(".cancelBtn");
 
+// Inbox/Today/This Week Section Variables
+
+const inboxSection = document.querySelector(".inboxSection");
+const inboxSectionBtn = document.querySelector(".inboxBtn");
+const todaySection = document.querySelector(".todaySection");
+const todaySectionBtn = document.querySelector(".todayBtn");
+const weekSection = document.querySelector(".weekSection");
+const weekSectionBtn = document.querySelector(".weekBtn");
+
+// Project Variables
+
+const projectAddBtn = document.querySelector(".projectAddBtn");
+const projectAddModal = document.querySelector(".projectFormSection");
+const cancelNewProjectBtn = document.querySelector(".projectCancelBtn");
+
+const projectSubmitBtn = document.querySelector(".projectSubmit");
+const projectInput = document.querySelector(".projectInput");
+const mainSection = document.querySelector(".mainSection")
+const projectList = document.querySelector(".projectList");
+const contentAddBtn = document.querySelector(".contentAddButton");
+
+const projectItem = document.querySelector(".projectItem");
+
+const select = document.getElementById("projectDropDown");
+
 // Submit button functionality
 function submitButton() {
     submitBtn.onclick = function (event) {
@@ -32,7 +57,6 @@ function submitButton() {
             addTask(task, description, date, priority, project);
             clearForm();
             displayTasks();
-            return project; // TODO: this
         };
     };
 };
@@ -44,16 +68,46 @@ function clearForm() {
     descriptionInput.value = "";
     dateInput.value = "";
     priorityInput.value = "";
+    /* select.value = "inbox"; */
 };
 
 // Display tasks
 function displayTasks() {
-    if (project = "value0") { // TODO: this
-            taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
-            console.log("taskEntries innerHTML cleared");
+    console.log("-----------------displayTasks function initiated-----------------");
+    if (select.value === "inbox") { // TODO: this
+        console.log("Inbox selected");
+        taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
+        console.log("taskEntries innerHTML cleared");
 
-            myTasks.forEach((task, index) => {
-                const taskEntry = `
+        myTasks.forEach((task, index) => {
+            const taskEntry = `
+            <button class="contentButton" data-index="${index}">
+                <div class="contentButtonLeftDiv">
+                    <i class="fa-regular fa-circle"></i>
+                    <p>${task.taskTitle}</p>
+                    <p>${task.description}</p>
+                    <p>${task.priority}</p>
+                </div>
+                <div class="contentButtonRightDiv">
+                    <p>${task.dueDate}</p>
+                    <p class="delete">
+                        <i class="fa-solid fa-trash" data-index="${index}"></i>
+                    </p>
+                </div>
+            </button>
+                `;
+            taskEntries.innerHTML += taskEntry;
+            console.log("taskEntries innerHTML updated with new task")
+        });
+
+    } else { // TODO: this
+        console.log(`Project selected: ${select.value}`);
+        mainSection.innerHTML = ""; // Clear previous project entries
+        console.log("mainSection cleared");
+
+        myTasks.forEach((task, index) => {
+            if (task.project === select.value) {
+                const projectTaskEntry = `
                 <button class="contentButton" data-index="${index}">
                     <div class="contentButtonLeftDiv">
                         <i class="fa-regular fa-circle"></i>
@@ -69,10 +123,12 @@ function displayTasks() {
                     </div>
                 </button>
                 `;
-                taskEntries.innerHTML += taskEntry;
-                console.log("taskEntries innerHTML updated with new task")
-            });
-        }
+                mainSection.innerHTML += projectTaskEntry;
+                console.log("mainSection updated with new project task");
+            };
+        });
+
+    };
     
 };
 
@@ -118,13 +174,6 @@ function cancelButton() {
 
 /* --------- Inbox/Today/This Week Section ------------ */
 
-const inboxSection = document.querySelector(".inboxSection");
-const inboxSectionBtn = document.querySelector(".inboxBtn");
-const todaySection = document.querySelector(".todaySection");
-const todaySectionBtn = document.querySelector(".todayBtn");
-const weekSection = document.querySelector(".weekSection");
-const weekSectionBtn = document.querySelector(".weekBtn");
-
 function inboxSectionFunction() {
     inboxSectionBtn.onclick = function() {
         console.log("inboxSection button clicked");
@@ -168,18 +217,6 @@ function weekSectionFunction() {
 }
 
 /* --------- Project Section ------------ */
-
-const projectAddBtn = document.querySelector(".projectAddBtn");
-const projectAddModal = document.querySelector(".projectFormSection");
-const cancelNewProjectBtn = document.querySelector(".projectCancelBtn");
-
-const projectSubmitBtn = document.querySelector(".projectSubmit");
-const projectInput = document.querySelector(".projectInput");
-const mainSection = document.querySelector(".mainSection")
-const projectList = document.querySelector(".projectList");
-const contentAddBtn = document.querySelector(".contentAddButton");
-
-const projectItem = document.querySelector(".projectItem");
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
@@ -336,22 +373,6 @@ function addProjectTask() {
         });
     };
 };
-
-const select = document.getElementById("projectDropDown");
-
-/* function modalProjectSelectOptions() {
-    console.log("modalProjectSelectOptions initiated");
-
-    console.log("select: ", select)
-    console.log("myProject: ", myProjects);
-    myProjects.forEach((project, index) => {
-        const option = document.createElement("option");
-        option.value = index;
-        option.text = project.projectTitle;
-        select.add(option);
-    })
-    console.log("select updated with new project:" + select.innerHTML);
-} */
 
 function modalProjectSelectOptions() {
     
