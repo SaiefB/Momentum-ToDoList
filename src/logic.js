@@ -15,7 +15,7 @@ class Task {
 }
 
 // Validates the form - checks if all fields are entered
-function validateForm(task, description, date, priority) {
+function validateForm(task, description, date, priority, project) {
     console.log("validateForm check initiated");
     if (task === "" || description === "" || date === "" || priority === "" || project === "") {
         alert("Please complete all required fields");

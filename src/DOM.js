@@ -25,9 +25,10 @@ function submitButton() {
         const description = descriptionInput.value;
         const date = dateInput.value;
         const priority = priorityInput.value;
+        const project = select.value;
 
-        if (validateForm(task, description, date, priority)) {
-            addTask(task, description, date, priority);
+        if (validateForm(task, description, date, priority, project)) {
+            addTask(task, description, date, priority, project);
             clearForm();
             displayTasks();
         };
@@ -348,10 +349,10 @@ const select = document.getElementById("projectDropDown");
 } */
 
 function modalProjectSelectOptions() {
-    let select = document.getElementById("projectDropDown");
-    console.log("modalProjectSelectOptions initiated");
+    
+    console.log("--------------modalProjectSelectOptions initiated--------------");
 
-    select.innerHTML = ""; // Clear previous project entries
+    select.innerHTML = '<option value="inbox">Inbox</option>' //clears options to avoid duplication
 
     console.log("select: ", select)
     console.log("myProject: ", myProjects);
