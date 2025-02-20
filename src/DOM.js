@@ -26,11 +26,13 @@ function submitButton() {
         const date = dateInput.value;
         const priority = priorityInput.value;
         const project = select.value;
+        console.log("project.value: " + project)
 
         if (validateForm(task, description, date, priority, project)) {
             addTask(task, description, date, priority, project);
             clearForm();
             displayTasks();
+            return project; // TODO: this
         };
     };
 };
@@ -46,29 +48,32 @@ function clearForm() {
 
 // Display tasks
 function displayTasks() {
-    taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
-    console.log("taskEntries innerHTML cleared");
+    if (project = "value0") { // TODO: this
+            taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
+            console.log("taskEntries innerHTML cleared");
 
-    myTasks.forEach((task, index) => {
-        const taskEntry = `
-        <button class="contentButton" data-index="${index}">
-            <div class="contentButtonLeftDiv">
-                <i class="fa-regular fa-circle"></i>
-                <p>${task.taskTitle}</p>
-                <p>${task.description}</p>
-                <p>${task.priority}</p>
-            </div>
-            <div class="contentButtonRightDiv">
-                <p>${task.dueDate}</p>
-                <p class="delete">
-                    <i class="fa-solid fa-trash" data-index="${index}"></i>
-                </p>
-            </div>
-        </button>
-        `;
-        taskEntries.innerHTML += taskEntry;
-        console.log("taskEntries innerHTML updated with new task")
-    });
+            myTasks.forEach((task, index) => {
+                const taskEntry = `
+                <button class="contentButton" data-index="${index}">
+                    <div class="contentButtonLeftDiv">
+                        <i class="fa-regular fa-circle"></i>
+                        <p>${task.taskTitle}</p>
+                        <p>${task.description}</p>
+                        <p>${task.priority}</p>
+                    </div>
+                    <div class="contentButtonRightDiv">
+                        <p>${task.dueDate}</p>
+                        <p class="delete">
+                            <i class="fa-solid fa-trash" data-index="${index}"></i>
+                        </p>
+                    </div>
+                </button>
+                `;
+                taskEntries.innerHTML += taskEntry;
+                console.log("taskEntries innerHTML updated with new task")
+            });
+        }
+    
 };
 
 // Delete Task functionality using Event Delegation
