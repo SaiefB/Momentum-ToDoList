@@ -105,6 +105,7 @@ function displayTasks() {
         mainSection.innerHTML = ""; // Clear previous project entries
         console.log("mainSection cleared");
 
+
         myTasks.forEach((task, index) => {
             if (task.project === select.value) {
                 const projectTaskEntry = `
