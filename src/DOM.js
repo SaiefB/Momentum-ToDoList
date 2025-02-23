@@ -44,6 +44,7 @@ const select = document.getElementById("projectDropDown");
 // Submit button functionality
 function submitButton() {
     submitBtn.onclick = function (event) {
+        console.log("-----submitButton function initiated-----");
         console.log("Task submitButton clicked")
         event.preventDefault();
         const task = taskInput.value;
@@ -51,7 +52,7 @@ function submitButton() {
         const date = dateInput.value;
         const priority = priorityInput.value;
         const project = select.value;
-        console.log("project.value: " + project)
+        console.log("select.value: " + project)
 
         if (validateForm(task, description, date, priority, project)) {
             addTask(task, description, date, priority, project);
@@ -63,6 +64,7 @@ function submitButton() {
 
 // Clear form fields
 function clearForm() {
+    console.log("-----clearForm function initiated-----");
     console.log("Task form cleared");
     taskInput.value = "";
     descriptionInput.value = "";
@@ -73,7 +75,7 @@ function clearForm() {
 
 // Display tasks
 function displayTasks() {
-    console.log("-----------------displayTasks function initiated-----------------");
+    console.log("-----displayTasks function initiated------");
     if (select.value === "inbox") { // TODO: this
         console.log("Inbox selected");
         taskEntries.innerHTML = ""; // Clears the current task entries to avoid duplication
@@ -101,13 +103,16 @@ function displayTasks() {
         });
 
     } else { // TODO: this
-        console.log(`Project selected: ${select.value}`);
-        mainSection.innerHTML = ""; // Clear previous project entries
-        console.log("mainSection cleared");
+        console.log(`${select.value} selected`);
+        /* mainSection.innerHTML = ""; // Clear previous project entries */
+        /* console.log("mainSection cleared"); */
 
 
         myTasks.forEach((task, index) => {
             if (task.project === select.value) {
+                console.log(`task.project: ${task.project}`);
+                console.log(`select.value: ${select.value}`);
+                console.log("Project task found");
                 const projectTaskEntry = `
                 <button class="contentButton" data-index="${index}">
                     <div class="contentButtonLeftDiv">
@@ -124,7 +129,7 @@ function displayTasks() {
                     </div>
                 </button>
                 `;
-                mainSection.innerHTML += projectTaskEntry;
+                taskEntries.innerHTML += projectTaskEntry;
                 console.log("mainSection updated with new project task");
             };
         });
@@ -148,6 +153,7 @@ function deleteTaskFunction() {
 // Modal open and close function
 function addTaskButton() {
     addBtn.onclick = function () {
+        console.log("-----addTaskButton function initiated-----");
         console.log("addTaskButton clicked");
         modal.style.display = "block";
         overlay.style.display = "block";
@@ -157,6 +163,7 @@ function addTaskButton() {
 
 function closeButton() {
     closeBtn.onclick = function () {
+        console.log("-----closeButton function initiated-----");
         console.log("Task closeButton clicked");
         modal.style.display = "none";
         overlay.style.display = "none";
@@ -166,6 +173,7 @@ function closeButton() {
 
 function cancelButton() {
     modalCancel.onclick = function() {
+        console.log("-----cancelButton function initiated-----");
         console.log("Task cancel button clicked");
         modal.style.display = "none";
         overlay.style.display = "none"; 
@@ -177,6 +185,7 @@ function cancelButton() {
 
 function inboxSectionFunction() {
     inboxSectionBtn.onclick = function() {
+        console.log("-----inboxSectionFunction initiated-----");
         console.log("inboxSection button clicked");
         inboxSection.style.display = "block";
         todaySection.style.display = "none";
@@ -191,6 +200,7 @@ function inboxSectionFunction() {
 
 function todaySectionFunction() {
     todaySectionBtn.onclick = function() {
+        console.log("-----todaySectionFunction initiated-----");
         console.log("todaySection button clicked");
         inboxSection.style.display = "none";
         todaySection.style.display = "block";
@@ -205,6 +215,7 @@ function todaySectionFunction() {
 
 function weekSectionFunction() {
     weekSectionBtn.onclick = function() {
+        console.log("-----weekSectionFunction initiated-----");
         console.log("weekSection button clicked");
         inboxSection.style.display = "none";
         todaySection.style.display = "none";
@@ -221,6 +232,7 @@ function weekSectionFunction() {
 
 function addNewProject() {
     projectAddBtn.onclick = function() {
+        console.log("-----addNewProject function initiated-----");
         console.log("addNewProject button clicked");
         projectAddBtn.style.display = "none";
         projectAddModal.style.display = "flex";
@@ -231,6 +243,7 @@ function addNewProject() {
 
 function closeNewProject() {
     cancelNewProjectBtn.onclick = function() {
+        console.log("-----closeNewProject function initiated-----");
         console.log("createNewProjectBtn clicked");
         projectAddBtn.style.display = "flex";
         projectAddModal.style.display = "none";
@@ -241,6 +254,7 @@ function closeNewProject() {
 
 function confirmNewProject() {
     projectSubmitBtn.onclick = function(event) {
+        console.log("-----confirmNewProject function initiated-----");
         console.log("projectSubmitBtn clicked");
         event.preventDefault();
         const project = projectInput.value;
@@ -264,12 +278,13 @@ function confirmNewProject() {
 
 // Clear Project Input
 function clearProjectForm() {
+    console.log("-----clearProjectForm function initiated-----");
     projectInput.value = "";
     console.log("projectForm cleared");
 };
 
 function displayProjectsAside() {
-    console.log("displayProjectsAside function initiated");
+    console.log("-----displayProjectsAside function initiated-----");
     projectList.innerHTML = ""; // Clears the current project entries to avoid duplication 
     console.log("projectList cleared");
 
@@ -293,8 +308,8 @@ function displayProjectsAside() {
 }
 
 function deleteProjectFunction() {
-    console.log("deleteProjectFunction initiated");
     projectList.addEventListener("click", (event) => {
+        console.log("-----deleteProjectFunction initiated-----");
         // check if a delete button was clicked
         if (event.target.classList.contains("fa-trash")) {
             console.log("deleteProject button clicked")
@@ -306,6 +321,7 @@ function deleteProjectFunction() {
 
 function changeProject() {
     projectList.onclick = function() {
+        console.log("-----changeProject function initiated-----");
         console.log("changeProject function initiated");
         inboxSection.style.display = "none";
         todaySection.style.display = "none";
@@ -330,7 +346,7 @@ function changeProject() {
 }
 
 function displayProjects(projectIndex) {
-    console.log("displayProjects function initiated");
+    console.log("-----displayProjects function initiated-----");
     mainSection.innerHTML = ""; // Clear previous project entries
     console.log("mainSection cleared");
 
@@ -341,11 +357,10 @@ function displayProjects(projectIndex) {
         const projectEntry = `
         <div class="projectContainer">
             <h1>${project.projectTitle}</h1>
-            <div class="taskItemContainer">
-                <button class="contentAddButton">
-                    <i class="fa-solid fa-plus"></i>
-                </button>
-            </div>
+            <div class="projectTaskItemContainer"></div>
+            <button class="contentAddButton">
+                <i class="fa-solid fa-plus"></i>
+            </button>
         </div>
         `;
 
@@ -359,6 +374,7 @@ function displayProjects(projectIndex) {
 
 function addProjectTask() {
     mainSection.onclick = function() {
+        console.log("-----addProjectTask function initiated-----");
         console.log("addProjectTask function initiated");
 
         mainSection.addEventListener("click", (event) => {
@@ -377,7 +393,7 @@ function addProjectTask() {
 
 function modalProjectSelectOptions() {
     
-    console.log("--------------modalProjectSelectOptions initiated--------------");
+    console.log("-----modalProjectSelectOptions initiated-----");
 
     select.innerHTML = '<option value="inbox">Inbox</option>' //clears options to avoid duplication
 

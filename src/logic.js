@@ -1,11 +1,11 @@
 //Logic.js
-console.log("myTasks array created")
+console.log("-----myTasks array created-----")
 const myTasks = [];
 
 // Inbox Class Constructor
 class Task {
     constructor(taskTitle, description, dueDate, priority, project) {
-        console.log("Task Constructor Initiated")
+        console.log("-----Task Constructor Initiated-----")
         this.taskTitle = taskTitle;
         this.description = description;
         this.dueDate = dueDate;
@@ -16,7 +16,7 @@ class Task {
 
 // Validates the form - checks if all fields are entered
 function validateForm(task, description, date, priority, project) {
-    console.log("validateForm check initiated");
+    console.log("-----Task validateForm function initiated-----");
     if (task === "" || description === "" || date === "" || priority === "" || project === "") {
         alert("Please complete all required fields");
         console.log("validateForm check: false");
@@ -28,8 +28,9 @@ function validateForm(task, description, date, priority, project) {
 
 // Function to Add Task to Inbox
 function addTask(taskTitle, description, dueDate, priority, project) {
-    console.log("addTask Function initiated")
+    console.log("-----addTask Function initiated-----")
     const newTask = new Task(taskTitle, description, dueDate, priority, project);
+    console.log("newTask created");
     myTasks.push(newTask);
     console.log("newTask pushed to myTasks, newTask array: ", newTask);
     console.log("myTask Array:", myTasks);
@@ -37,6 +38,7 @@ function addTask(taskTitle, description, dueDate, priority, project) {
 
 //Function to remove task from array
 function removeFromArray() {
+    console.log("-----removeFromArray function initiated-----")
     console.log("current myTasks array: " + myTasks);
     console.log("removeFromArray function initiated")
     const taskIndex = parseInt(event.target.getAttribute("data-index"), 10);
@@ -46,25 +48,19 @@ function removeFromArray() {
 }
 
 // Project Section
-console.log("myProjects array created");
+console.log("-----myProjects array created-----");
 const myProjects = [];
 
 // Project Class Constructor
 class Project {
     constructor(projectTitle) {
         this.projectTitle = projectTitle;
-        this.tasks = [];
-        console.log("Project constructor initiated");
+        console.log("-----Project constructor initiated-----");
     };
-
-    addProjectTask(task) {
-        this.tasks.push(task);
-        console.log(`Task "${task.taskTitle}" added to project: ${this.projectTitle}`);
-    }
 };
 
 function validateProjectForm() {
-    console.log("validateProjectForm function initiated");
+    console.log("-----validateProjectForm function initiated-----");
     const projectTitle = projectInput.value;
     console.log("projectTitle saved");
     if (projectTitle === "") {
@@ -77,7 +73,7 @@ function validateProjectForm() {
 }
 
 function addProject(projectTitle) {
-    console.log("addProject function initiated");
+    console.log("-----addProject function initiated-----");
     const newProject = new Project(projectTitle);
     myProjects.push(newProject);
     console.log("newProject pushed to myProjects array, newProject array: ", newProject);
@@ -86,6 +82,7 @@ function addProject(projectTitle) {
 
 // Function to remove project from array
 function removeFromProjectArray() {
+    console.log("-----removeFromProjectArray function initiated-----");
     console.log("current myProjects array: " + myProjects);
     console.log("removeFromProjectArray function initiated");
     const projectIndex = parseInt(event.target.getAttribute("data-index"), 10);
