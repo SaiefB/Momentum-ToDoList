@@ -131,7 +131,6 @@ function displayTasks() {
                 </button>
                 `;
                 taskEntries.innerHTML += projectTaskEntry
-                projectTaskItemContainer.innerHTML += projectTaskEntry;
 
                 console.log("mainSection updated with new project task");
             };
@@ -350,7 +349,7 @@ function changeProject() {
 
 function displayProjects(projectIndex) {
     console.log("-----displayProjects function initiated-----");
-    mainSection.innerHTML = ""; // Clear previous project entries
+    /* mainSection.innerHTML = ""; // Clear previous project entries */
     console.log("mainSection cleared");
 
     // Check if projectIndex is valid
@@ -360,7 +359,7 @@ function displayProjects(projectIndex) {
         const projectEntry = `
         <div class="projectContainer">
             <h1>${project.projectTitle}</h1>
-            <div class="projectTaskItemContainer"></div>
+            <div class="taskItemContainer"></div>
             <button class="contentAddButton">
                 <i class="fa-solid fa-plus"></i>
             </button>

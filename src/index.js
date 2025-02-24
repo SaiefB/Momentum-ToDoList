@@ -19,5 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     displayProjects();
     deleteProjectFunction();
     changeProject();
-    addProjectTask();
+    /* addProjectTask(); */
 });
+
+
+// -----------------------------------------------------------------------------------------------------------------------
