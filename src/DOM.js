@@ -36,6 +36,7 @@ const projectInput = document.querySelector(".projectInput");
 const mainSection = document.querySelector(".mainSection")
 const projectList = document.querySelector(".projectList");
 const contentAddBtn = document.querySelector(".contentAddButton");
+let projectTaskItemContainer = "";
 
 const projectItem = document.querySelector(".projectItem");
 
@@ -129,7 +130,9 @@ function displayTasks() {
                     </div>
                 </button>
                 `;
-                taskEntries.innerHTML += projectTaskEntry;
+                taskEntries.innerHTML += projectTaskEntry
+                projectTaskItemContainer.innerHTML += projectTaskEntry;
+
                 console.log("mainSection updated with new project task");
             };
         });
@@ -366,6 +369,7 @@ function displayProjects(projectIndex) {
 
         mainSection.innerHTML = projectEntry; // Display only the selected project
         console.log(`Displayed project: ${project.projectTitle}`);
+        projectTaskItemContainer = document.querySelector(".projectTaskItemContainer");
         addProjectTask();
     } else {
         console.log("Invalid project index:", projectIndex);
