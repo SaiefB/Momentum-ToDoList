@@ -413,3 +413,6 @@ function modalProjectSelectOptions() {
 
 // Export
 export { submitButton, closeButton, cancelButton, addTaskButton, deleteTaskFunction, todaySectionFunction, inboxSectionFunction, weekSectionFunction, addNewProject, closeNewProject, confirmNewProject, displayProjects, deleteProjectFunction, changeProject, addProjectTask};
+
+
+// create this again but not the way ive been doing, I need to have a single place i place the tasks and then filter that array to display the tasks which are assigned to that project.
